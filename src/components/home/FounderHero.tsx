@@ -41,7 +41,7 @@ export default function FounderHero() {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-[92vh] flex items-center justify-center pt-8 pb-16 lg:pb-24 overflow-hidden"
+      className="relative min-h-[92vh] flex items-center justify-center pt-4 sm:pt-6 lg:pt-8 pb-12 lg:pb-24 overflow-hidden"
     >
       {/* Subtle Deep Blue / Purple Ambient Glow */}
       <div 
@@ -54,10 +54,10 @@ export default function FounderHero() {
       <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-blue-950/20 blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 items-center">
           
-          {/* Left Column: Command Typography & Value Narrative (7 cols) */}
-          <div className="lg:col-span-7 space-y-8 text-left">
+          {/* Left Column: Command Typography & Value Narrative (7 cols on desktop, 2nd order on mobile) */}
+          <div className="order-2 lg:order-1 lg:col-span-7 space-y-6 sm:space-y-8 text-left">
             
             {/* Top Badge: AI / ML Engineer */}
             <div className="flex items-center gap-3">
@@ -143,9 +143,9 @@ export default function FounderHero() {
             </div>
           </div>
 
-          {/* Right Column: Taller, Centered Transparent Portrait with Orbit Geometry (5 cols) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
-            <div className="relative w-full max-w-[560px] lg:max-w-[620px] h-[560px] sm:h-[640px] lg:h-[720px] flex items-center justify-center select-none overflow-visible">
+          {/* Right Column: Transparent Portrait with Orbit Geometry (1st order on mobile at the top, 5 cols on desktop) */}
+          <div className="order-1 lg:order-2 lg:col-span-5 flex justify-center lg:justify-end relative">
+            <div className="relative w-full max-w-[280px] sm:max-w-[360px] md:max-w-[440px] lg:max-w-[620px] h-[280px] sm:h-[360px] md:h-[440px] lg:h-[720px] flex items-center justify-center select-none overflow-visible">
               
               {/* 1. Geometric Orbit SVG Elements - Concentric & Centered in Middle */}
               <div 
@@ -195,7 +195,7 @@ export default function FounderHero() {
 
               {/* 2. Soft Rim Light Bloom behind Head - Centered */}
               <div 
-                className="absolute top-1/4 w-80 h-80 rounded-full bg-gradient-to-tr from-blue-600/30 via-indigo-500/20 to-purple-600/15 blur-[90px] pointer-events-none transition-transform duration-500 ease-out"
+                className="absolute top-1/4 w-44 h-44 sm:w-56 sm:h-56 lg:w-80 lg:h-80 rounded-full bg-gradient-to-tr from-blue-600/30 via-indigo-500/20 to-purple-600/15 blur-[55px] sm:blur-[70px] lg:blur-[90px] pointer-events-none transition-transform duration-500 ease-out"
                 style={{
                   transform: `translate(${portraitOffsetX * 0.5}px, ${portraitOffsetY * 0.5}px)`,
                 }}
