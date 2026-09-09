@@ -20,6 +20,7 @@ import {
 import { profileData, educationData, achievementsData } from '@/data/profile';
 import { experienceData } from '@/data/experience';
 import { skillCategories } from '@/data/skills';
+import { getAssetPath } from '@/lib/assets';
 
 export default function ResumePage() {
   const [activeTab, setActiveTab] = useState<'preview' | 'text'>('preview');
@@ -44,7 +45,7 @@ export default function ResumePage() {
         {/* Download Button */}
         <div className="flex items-center gap-3">
           <a
-            href="/assets/docs/Jayanth_AI_ML_Resume.pdf"
+            href={getAssetPath('/assets/docs/Jayanth_AI_ML_Resume.pdf')}
             download="Jayanth_Karri_AI_ML_Resume.pdf"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium text-xs transition shadow-glow hover:scale-105"
           >
@@ -52,7 +53,7 @@ export default function ResumePage() {
             <span>Download PDF</span>
           </a>
           <a
-            href="/assets/docs/Jayanth_AI_ML_Resume.pdf"
+            href={getAssetPath('/assets/docs/Jayanth_AI_ML_Resume.pdf')}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2.5 rounded-xl bg-surface border border-white/10 text-slate-300 hover:text-white hover:border-cyan-500/40 transition"
@@ -99,7 +100,7 @@ export default function ResumePage() {
                 Jayanth_AI_ML_Resume.pdf
               </span>
               <a
-                href="/assets/docs/Jayanth_AI_ML_Resume.pdf"
+                href={getAssetPath('/assets/docs/Jayanth_AI_ML_Resume.pdf')}
                 download="Jayanth_Karri_AI_ML_Resume.pdf"
                 className="text-cyan-400 hover:underline flex items-center gap-1"
               >
@@ -111,7 +112,7 @@ export default function ResumePage() {
             {/* Embedded PDF iframe */}
             <div className="w-full h-[750px] md:h-[900px] bg-slate-900">
               <iframe
-                src="/assets/docs/Jayanth_AI_ML_Resume.pdf#toolbar=1&navpanes=0"
+                src={`${getAssetPath('/assets/docs/Jayanth_AI_ML_Resume.pdf')}#toolbar=1&navpanes=0`}
                 title="Jayanth Karri AI/ML Resume"
                 className="w-full h-full border-none"
               />
@@ -120,7 +121,7 @@ export default function ResumePage() {
           <p className="text-center text-xs text-slate-500">
             Having trouble viewing the PDF? Switch to the &quot;ATS / Web Text View&quot; tab or{' '}
             <a
-              href="/assets/docs/Jayanth_AI_ML_Resume.pdf"
+              href={getAssetPath('/assets/docs/Jayanth_AI_ML_Resume.pdf')}
               download
               className="text-cyan-400 hover:underline"
             >

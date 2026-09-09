@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
+import { getAssetPath } from '@/lib/assets';
 
 interface CarouselSlide {
   src: string;
@@ -69,7 +70,7 @@ export default function ProjectCarousel({
           >
             {/* Standard img tag for native SVG crisp rendering */}
             <img
-              src={slide.src}
+              src={getAssetPath(slide.src)}
               alt={slide.alt}
               className="w-full h-full object-contain"
               loading="lazy"

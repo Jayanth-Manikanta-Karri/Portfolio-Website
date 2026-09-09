@@ -11,6 +11,7 @@ import {
   Mail 
 } from 'lucide-react';
 import { profileData } from '@/data/profile';
+import { getAssetPath } from '@/lib/assets';
 
 export default function FounderHero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -93,7 +94,7 @@ export default function FounderHero() {
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <a
-                href="/assets/docs/Jayanth_AI_ML_Resume.pdf"
+                href={getAssetPath('/assets/docs/Jayanth_AI_ML_Resume.pdf')}
                 download="Jayanth_Karri_AI_ML_Resume.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] hover:border-white/[0.18] text-slate-300 hover:text-white font-medium text-sm transition-all duration-200"
               >
@@ -210,7 +211,7 @@ export default function FounderHero() {
                 }}
               >
                 <Image
-                  src="/assets/images/profileimage.png"
+                  src={getAssetPath('/assets/images/profileimage.png')}
                   alt={profileData.name}
                   fill
                   className="object-contain object-center filter contrast-[1.04] drop-shadow-[0_25px_50px_rgba(0,0,0,0.8)] scale-110 sm:scale-115 lg:scale-120"

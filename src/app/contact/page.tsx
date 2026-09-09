@@ -33,24 +33,23 @@ export default function ContactPage() {
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus('idle');
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      const subject = encodeURIComponent(formData.subject || `Portfolio Inquiry from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Hi Jayanth,\n\n${formData.message}\n\nBest regards,\n${formData.name}\nEmail: ${formData.email}`
+      );
+      const mailtoUrl = `mailto:${profileData.email}?subject=${subject}&body=${body}`;
 
-      if (res.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setStatus('error');
-      }
+      // Trigger user's default email client
+      window.location.href = mailtoUrl;
+
+      setStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (err) {
       setStatus('error');
     } finally {
@@ -199,7 +198,7 @@ export default function ContactPage() {
               <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs flex items-center gap-2.5">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
                 <span>
-                  Thank you! Your message has been sent successfully. I look forward to speaking with you.
+                  Opening your default email client with your message drafted. You can also send directly to {profileData.email}.
                 </span>
               </div>
             )}

@@ -15,6 +15,7 @@ import {
   Bot
 } from 'lucide-react';
 import { profileData, educationData, achievementsData } from '@/data/profile';
+import { getAssetPath } from '@/lib/assets';
 
 export const metadata = {
   title: 'About Jayanth Manikanta Karri | AI/ML Engineer',
@@ -94,7 +95,7 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent pointer-events-none" />
             <div className="relative w-48 h-56 sm:w-56 sm:h-64 mb-3">
               <Image
-                src="/assets/images/profileimage.png"
+                src={getAssetPath('/assets/images/profileimage.png')}
                 alt={profileData.name}
                 fill
                 className="object-contain object-bottom filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)]"

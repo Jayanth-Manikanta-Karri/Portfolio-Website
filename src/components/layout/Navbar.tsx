@@ -10,6 +10,7 @@ import {
   FileText, 
   ArrowUpRight 
 } from 'lucide-react';
+import { getAssetPath } from '@/lib/assets';
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
@@ -88,7 +89,7 @@ export default function Navbar() {
         {/* Desktop Quick Actions */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="/assets/docs/Jayanth_AI_ML_Resume.pdf"
+            href={getAssetPath('/assets/docs/Jayanth_AI_ML_Resume.pdf')}
             download="Jayanth_Karri_AI_ML_Resume.pdf"
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-slate-300 hover:text-white bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] rounded-lg transition"
           >
@@ -140,7 +141,7 @@ export default function Navbar() {
           })}
           <div className="pt-3 border-t border-white/[0.08] flex gap-2">
             <a
-              href="/assets/docs/Jayanth_AI_ML_Resume.pdf"
+              href={getAssetPath('/assets/docs/Jayanth_AI_ML_Resume.pdf')}
               download="Jayanth_Karri_AI_ML_Resume.pdf"
               className="flex-1 text-center py-2 text-xs font-mono text-slate-300 bg-white/[0.04] border border-white/[0.08] rounded-lg"
             >
