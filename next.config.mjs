@@ -1,5 +1,6 @@
+const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
 const isProd = process.env.NODE_ENV === 'production';
-const isGitHubPages = process.env.GITHUB_ACTIONS || process.env.GITHUB_PAGES === 'true' || isProd;
+const isGitHubPages = isGitHubActions || (isProd && process.env.GITHUB_PAGES === 'true');
 const basePath = isGitHubPages ? '/Portfolio-Website' : '';
 
 /** @type {import('next').NextConfig} */
