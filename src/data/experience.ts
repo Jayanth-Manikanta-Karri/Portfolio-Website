@@ -1,0 +1,127 @@
+import { ExperienceItem } from '@/types';
+
+export const experienceData: ExperienceItem[] = [
+  {
+    role: 'AI / ML Engineer — Agentic AI & Deployment Infrastructure',
+    company: 'Quantum AI Global',
+    location: 'Hyderabad, India',
+    period: 'Jul 2025 – Present',
+    type: 'Full-time',
+    isCurrent: true,
+    overview:
+      'Designing and operating production hybrid AI deployment architecture and autonomous multi-agent pipelines serving concurrent LLM and Diffusion workloads.',
+    highlights: [
+      'Designed and operated a hybrid AI deployment architecture serving concurrent LLM and Diffusion workloads across on-premise GPU servers (Ada RTX 6000, 48 GB VRAM) and cloud environments (AWS EC2 GPU, Azure AI), enabling seamless failover and cost-adaptive routing.',
+      'Architected and shipped multi-agent AI pipelines using LangGraph and AutoGen, enabling autonomous task decomposition, tool-use, memory management, and self-correcting reasoning loops across production workflows.',
+      'Integrated Model Context Protocol (MCP) for dynamic tool and data-source connectivity in agentic systems, slashing the time to connect new capabilities to agents from days to hours.',
+      'Built parallel FastAPI inference pipelines with CPU offloading and multi-threaded GPU scheduling supporting simultaneous serving of LLaMA 3.1, Qwen, Mistral, SDXL, and FLUX with zero cold-start downtime.',
+      'Containerized AI services with Docker and orchestrated multi-node deployments linking frontend, inference engine, and backend nodes through secured internal networking and cloud VPC peering.',
+      'Conducted IOPS, network latency, and GPU utilization profiling across on-prem and cloud endpoints; established performance baselines now used across all production AI deployments.',
+    ],
+    skills: [
+      'LangGraph',
+      'AutoGen',
+      'Model Context Protocol (MCP)',
+      'Ada RTX 6000 GPU',
+      'FastAPI',
+      'Docker',
+      'AWS EC2',
+      'Azure AI',
+      'VPC Peering',
+    ],
+    impactMetrics: [
+      'Hybrid cloud/on-prem failover architecture',
+      'Zero cold-start downtime for multi-model serving',
+      'MCP integration cut tool-connection time from days to hours',
+    ],
+  },
+  {
+    role: 'Junior AI Developer',
+    company: 'Quantum AI Global',
+    location: 'Hyderabad, India',
+    period: 'Nov 2024 – Jul 2025',
+    type: 'Full-time',
+    isCurrent: false,
+    overview:
+      'Developed enterprise agentic RAG systems, managed open-source model serving, applied model quantization, and integrated vision-language models.',
+    highlights: [
+      'Built agentic RAG systems using LangChain and LlamaIndex; implemented ReAct-style agents with tool-use, multi-hop retrieval, and self-reflection loops for enterprise document Q&A.',
+      'Deployed and served open-source LLMs (LLaMA 3.1, Qwen, Mistral) and Diffusion Models (SDXL, FLUX) in production; managed model loading, request batching, and API exposure via FastAPI.',
+      'Applied GPTQ and AWQ quantization with VRAM optimization techniques, cutting inference latency by 35% in shared-GPU environments with no measurable accuracy loss.',
+      'Worked with Vision-Language Models (VLMs) including LLaVA and GPT-4V for multimodal pipelines combining image understanding with structured text generation.',
+      'Built production computer-vision features (object detection, segmentation, and classification) using YOLOv8 and ViT-based architectures integrated into FastAPI backends.',
+      'Contributed to the internal MRC (Models, Routes, Controllers) AI backend framework, enforcing modular separation that reduced new-model onboarding time across two shipped products.',
+    ],
+    skills: [
+      'LangChain',
+      'LlamaIndex',
+      'GPTQ / AWQ Quantization',
+      'LLaMA 3.1',
+      'SDXL & FLUX',
+      'LLaVA & GPT-4V',
+      'YOLOv8',
+      'FastAPI',
+    ],
+    impactMetrics: [
+      '35% reduction in GPU inference latency',
+      '20% boost in retrieval precision with hybrid RAG',
+      '2 production products shipped with modular MRC framework',
+    ],
+  },
+  {
+    role: 'ML Engineer Intern',
+    company: 'Quantum AI Global',
+    location: 'Hyderabad, India',
+    period: 'Mar 2024 – Nov 2024',
+    type: 'Internship',
+    isCurrent: false,
+    overview:
+      'Engineered hybrid dense-sparse RAG pipelines and developed FastAPI AI layers integrating frontier LLMs for enterprise automation.',
+    highlights: [
+      'Built RAG pipelines using FAISS and MongoDB Atlas vector search, improving retrieval precision by 20% through hybrid dense-sparse indexing for enterprise chatbot PoCs.',
+      'Developed FastAPI AI API layers integrating GPT-4 and Claude APIs into intelligent automation workflows; delivered 4 PoC prototypes successfully adopted into the production roadmap.',
+      'Explored structured outputs, function calling, and JSON mode across OpenAI and Anthropic APIs to build reliable, schema-constrained AI responses for downstream application integration.',
+      'Researched and documented prompt engineering, chain-of-thought reasoning, and chatbot personalization strategies; outputs became team-wide prompt design standards.',
+    ],
+    skills: [
+      'FAISS',
+      'MongoDB Atlas Vector Search',
+      'GPT-4',
+      'Claude API',
+      'Function Calling',
+      'Prompt Engineering',
+      'FastAPI',
+    ],
+    impactMetrics: [
+      '4 PoC prototypes promoted to production roadmap',
+      '20% retrieval precision improvement via dense-sparse indexing',
+    ],
+  },
+  {
+    role: 'Product Lead',
+    company: 'Quantum AI Global',
+    location: 'Hyderabad, India',
+    period: 'Leadership Focus',
+    type: 'Leadership',
+    isCurrent: false,
+    overview:
+      'Led the end-to-end engineering, feature planning, and agentic AI integration of two AI entertainment products from zero to production deployment.',
+    highlights: [
+      'Led development of two AI-based entertainment products from zero to deployment; managed an engineering team of 5 developers and 3 interns across feature planning, sprint execution, and agentic AI integration.',
+      'Mentored team members in LLM integration, agentic workflow design, and backend API development.',
+      'Introduced standardized code-review practices and CI quality checks that improved PR throughput by 40%.',
+    ],
+    skills: [
+      'Technical Leadership',
+      'Sprint Execution',
+      'Multi-Agent System Design',
+      'Code Review & Mentorship',
+      'Architecture Strategy',
+    ],
+    impactMetrics: [
+      '2 products shipped from zero to production',
+      '40% improvement in pull request throughput',
+      'Mentored 8 team members in agentic engineering',
+    ],
+  },
+];

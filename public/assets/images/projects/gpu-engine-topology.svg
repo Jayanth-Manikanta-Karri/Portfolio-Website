@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGpu" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B15" />
+      <stop offset="100%" stop-color="#101726" />
+    </linearGradient>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="600" fill="url(#bgGpu)" />
+
+  <text x="60" y="60" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">
+    HYBRID GPU INFERENCE ENGINE — TOPOLOGY &amp; SERVING ORCHESTRATION
+  </text>
+  <text x="60" y="85" font-family="'JetBrains Mono', monospace" font-size="12" fill="#22D3EE">
+    FastAPI • Ada RTX 6000 48GB VRAM • Dynamic CPU Offloading • AWS Burst Failover
+  </text>
+
+  <!-- Connectors -->
+  <path d="M 210 270 L 290 270" stroke="#06B6D4" stroke-width="2" />
+  <path d="M 470 240 L 550 200" stroke="#10B981" stroke-width="2" />
+  <path d="M 470 300 L 550 350" stroke="#C084FC" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- Client Traffic Gateway -->
+  <g transform="translate(60, 190)">
+    <rect width="150" height="160" rx="10" fill="#131D30" stroke="rgba(255,255,255,0.1)" />
+    <rect width="150" height="4" rx="2" fill="#06B6D4" />
+    <text x="15" y="30" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Client Traffic</text>
+    <text x="15" y="55" font-family="sans-serif" font-size="10" fill="#94A3B8">• Web UI &amp; Agents</text>
+    <text x="15" y="75" font-family="sans-serif" font-size="10" fill="#94A3B8">• REST / WebSocket</text>
+    <text x="15" y="95" font-family="sans-serif" font-size="10" fill="#94A3B8">• Token Streaming</text>
+    <rect x="15" y="115" width="120" height="25" rx="4" fill="#06B6D4" fill-opacity="0.15" />
+    <text x="25" y="132" font-family="'JetBrains Mono', monospace" font-size="9" fill="#22D3EE">200 Concur. Req/s</text>
+  </g>
+
+  <!-- Dispatcher & Scheduler -->
+  <g transform="translate(290, 170)">
+    <rect width="180" height="200" rx="12" fill="#152138" stroke="#06B6D4" stroke-width="1.5" />
+    <text x="15" y="30" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#22D3EE">FastAPI Scheduler</text>
+    <text x="15" y="50" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">Queue Depth &amp; Priority Router</text>
+
+    <rect x="15" y="65" width="150" height="35" rx="4" fill="#1A2946" />
+    <text x="25" y="87" font-family="sans-serif" font-size="10" fill="#E2E8F0">1. CUDA Stream Manager</text>
+
+    <rect x="15" y="110" width="150" height="35" rx="4" fill="#1A2946" />
+    <text x="25" y="132" font-family="sans-serif" font-size="10" fill="#E2E8F0">2. AWQ Quantization Core</text>
+
+    <rect x="15" y="155" width="150" height="30" rx="4" fill="#1A2946" />
+    <text x="25" y="174" font-family="sans-serif" font-size="10" fill="#E2E8F0">3. CPU Memory Pinned Cache</text>
+  </g>
+
+  <!-- Node 1: Steady State On-Prem -->
+  <g transform="translate(550, 110)">
+    <rect width="390" height="180" rx="12" fill="#121D30" stroke="#10B981" stroke-width="2" />
+    <text x="20" y="35" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#34D399">
+      ON-PREMISE STEADY-STATE SERVING (Tier 1)
+    </text>
+    <text x="20" y="55" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">
+      Ada RTX 6000 (48 GB GDDR6 with ECC)
+    </text>
+
+    <g transform="translate(20, 75)">
+      <rect width="170" height="40" rx="6" fill="#182740" />
+      <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">LLaMA 3.1 8B (AWQ)</text>
+      <text x="10" y="34" font-family="'JetBrains Mono', monospace" font-size="9" fill="#22D3EE">5.2 GB VRAM • 68 tok/s</text>
+    </g>
+
+    <g transform="translate(200, 75)">
+      <rect width="170" height="40" rx="6" fill="#182740" />
+      <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">Mistral &amp; Qwen (GPTQ)</text>
+      <text x="10" y="34" font-family="'JetBrains Mono', monospace" font-size="9" fill="#22D3EE">8.4 GB VRAM • 54 tok/s</text>
+    </g>
+
+    <g transform="translate(20, 125)">
+      <rect width="350" height="40" rx="6" fill="#182740" />
+      <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">SDXL &amp; FLUX.1 (Dynamic CPU Offload)</text>
+      <text x="10" y="34" font-family="'JetBrains Mono', monospace" font-size="9" fill="#34D399">22.0 GB VRAM Active • 0ms Cold Start</text>
+    </g>
+  </g>
+
+  <!-- Node 2: Elastic Cloud Burst -->
+  <g transform="translate(550, 315)">
+    <rect width="390" height="140" rx="12" fill="#131B2C" stroke="#8B5CF6" stroke-width="1.5" />
+    <text x="20" y="30" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#C084FC">
+      AWS EC2 GPU BURST CAPACITY (Tier 2 Elastic)
+    </text>
+    <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">
+      g5.2xlarge Instances via VPC Peering &amp; Auto-Provisioning
+    </text>
+
+    <rect x="20" y="65" width="350" height="55" rx="6" fill="#1B2236" />
+    <text x="35" y="88" font-family="sans-serif" font-size="10" fill="#E2E8F0">Trigger: Local GPU Queue &gt; 85% for 15+ seconds</text>
+    <text x="35" y="106" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A78BFA">Failover Latency: &lt; 400ms • Auto-Terminates upon Idle</text>
+  </g>
+
+  <!-- Metric Banner -->
+  <rect x="60" y="480" width="880" height="65" rx="10" fill="#0C1424" stroke="rgba(255,255,255,0.06)" />
+  <text x="90" y="520" font-family="'JetBrains Mono', monospace" font-size="12" fill="#22D3EE">
+    ⚡ 35% Latency Reduction (AWQ/GPTQ)
+  </text>
+  <text x="400" y="520" font-family="'JetBrains Mono', monospace" font-size="12" fill="#34D399">
+    ⚡ 0 Cold-Start Downtime
+  </text>
+  <text x="680" y="520" font-family="'JetBrains Mono', monospace" font-size="12" fill="#C084FC">
+    ⚡ 5 Models Served Simultaneously
+  </text>
+</svg>

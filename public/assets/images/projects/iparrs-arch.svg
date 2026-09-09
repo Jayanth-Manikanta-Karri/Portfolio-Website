@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070C18" />
+      <stop offset="100%" stop-color="#0E1626" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="600" fill="url(#bg2)" />
+
+  <text x="60" y="60" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">
+    IPARRS — AGENTIC RAG &amp; COMPLIANCE PIPELINE ARCHITECTURE
+  </text>
+  <text x="60" y="85" font-family="'JetBrains Mono', monospace" font-size="12" fill="#34D399">
+    LangChain • Hybrid Dense-Sparse (FAISS + BM25) • Cross-Encoder Re-Ranker • PostgreSQL
+  </text>
+
+  <!-- Flow connecting paths -->
+  <path d="M 180 250 L 250 250" stroke="#10B981" stroke-width="2" stroke-dasharray="4 4" />
+  <path d="M 430 250 L 500 250" stroke="#10B981" stroke-width="2" stroke-dasharray="4 4" />
+  <path d="M 680 250 L 750 250" stroke="#10B981" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- Stage 1: Document Processing -->
+  <g transform="translate(60, 170)">
+    <rect width="120" height="180" rx="10" fill="#111827" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+    <rect width="120" height="4" rx="2" fill="#10B981" />
+    <text x="15" y="30" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Ingestion</text>
+    <text x="15" y="55" font-family="sans-serif" font-size="9" fill="#94A3B8">• 500+ Page PDF</text>
+    <text x="15" y="75" font-family="sans-serif" font-size="9" fill="#94A3B8">• Clause Splitting</text>
+    <text x="15" y="95" font-family="sans-serif" font-size="9" fill="#94A3B8">• Hierarchy Trees</text>
+    <text x="15" y="115" font-family="sans-serif" font-size="9" fill="#94A3B8">• Meta Tagging</text>
+    <rect x="10" y="145" width="100" height="20" rx="4" fill="#10B981" fill-opacity="0.1" />
+    <text x="18" y="158" font-family="'JetBrains Mono', monospace" font-size="8" fill="#34D399">OCR + PyMuPDF</text>
+  </g>
+
+  <!-- Stage 2: Hybrid Indexing -->
+  <g transform="translate(250, 150)">
+    <rect width="180" height="220" rx="10" fill="#131F33" stroke="#10B981" stroke-width="1.5" />
+    <text x="15" y="30" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#34D399">Hybrid Retrieval</text>
+    <text x="15" y="48" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94A3B8">Dual-Channel Candidate Gen</text>
+
+    <rect x="15" y="65" width="150" height="55" rx="6" fill="#1A2942" />
+    <text x="25" y="85" font-family="sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">Dense Semantic</text>
+    <text x="25" y="105" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38BDF8">FAISS (BGE-Large)</text>
+
+    <rect x="15" y="130" width="150" height="55" rx="6" fill="#1A2942" />
+    <text x="25" y="150" font-family="sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">Sparse Lexical</text>
+    <text x="25" y="170" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FBBF24">BM25 (Exact Articles)</text>
+
+    <text x="15" y="205" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10B981">+20% Retrieval Precision</text>
+  </g>
+
+  <!-- Stage 3: Re-Ranking & Agent Reasoning -->
+  <g transform="translate(500, 150)">
+    <rect width="180" height="220" rx="10" fill="#131F33" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+    <text x="15" y="30" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Agentic Reasoning</text>
+    <text x="15" y="48" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94A3B8">Cross-Encoder + ReAct</text>
+
+    <rect x="15" y="65" width="150" height="50" rx="6" fill="#1C2438" />
+    <text x="25" y="85" font-family="sans-serif" font-size="10" font-weight="600" fill="#A78BFA">Cross-Encoder</text>
+    <text x="25" y="102" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94A3B8">Top 50 -> Top 8 Filter</text>
+
+    <rect x="15" y="125" width="150" height="60" rx="6" fill="#1C2438" />
+    <text x="25" y="145" font-family="sans-serif" font-size="10" font-weight="600" fill="#22D3EE">Self-Reflection Loop</text>
+    <text x="25" y="162" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94A3B8">LangChain Agent</text>
+    <text x="25" y="175" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94A3B8">Check False Positives</text>
+  </g>
+
+  <!-- Stage 4: Risk Report & Dashboard -->
+  <g transform="translate(750, 170)">
+    <rect width="180" height="180" rx="10" fill="#111827" stroke="#10B981" stroke-width="1.5" />
+    <text x="15" y="30" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#34D399">Output Dossier</text>
+    <text x="15" y="55" font-family="sans-serif" font-size="9" fill="#94A3B8">• Severity Heatmap</text>
+    <text x="15" y="75" font-family="sans-serif" font-size="9" fill="#94A3B8">• Verbatim Quotes</text>
+    <text x="15" y="95" font-family="sans-serif" font-size="9" fill="#94A3B8">• Regulatory Links</text>
+    <text x="15" y="115" font-family="sans-serif" font-size="9" fill="#94A3B8">• Audit Export</text>
+    <rect x="10" y="140" width="160" height="25" rx="4" fill="#10B981" fill-opacity="0.15" />
+    <text x="20" y="157" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10B981">-60% Audit Overhead</text>
+  </g>
+
+  <!-- Metric Bar -->
+  <rect x="60" y="460" width="870" height="70" rx="10" fill="#0C1424" stroke="rgba(255,255,255,0.06)" />
+  <text x="90" y="500" font-family="'JetBrains Mono', monospace" font-size="12" fill="#34D399">✓ 60% Effort Reduction</text>
+  <text x="350" y="500" font-family="'JetBrains Mono', monospace" font-size="12" fill="#38BDF8">✓ 99.4% Verifiable Citations</text>
+  <text x="650" y="500" font-family="'JetBrains Mono', monospace" font-size="12" fill="#A78BFA">✓ Zero Cloud Egress Leakage</text>
+</svg>

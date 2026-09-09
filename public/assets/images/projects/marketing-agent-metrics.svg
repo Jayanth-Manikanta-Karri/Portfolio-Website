@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080D1A" />
+      <stop offset="100%" stop-color="#0E162B" />
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="600" fill="url(#g1)" />
+  <text x="60" y="70" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">
+    INFERENCE BENCHMARKS &amp; COST COMPARISON
+  </text>
+  <text x="60" y="98" font-family="'JetBrains Mono', monospace" font-size="12" fill="#22D3EE">
+    Hybrid Compute vs Cloud-Only • Latency vs Throughput Profiles
+  </text>
+
+  <!-- Metric Card 1: Turnaround Time -->
+  <g transform="translate(60, 140)">
+    <rect width="270" height="380" rx="12" fill="#131B2E" stroke="rgba(255,255,255,0.08)" />
+    <text x="25" y="45" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" fill="#F8FAFC">Campaign Turnaround</text>
+    <text x="25" y="70" font-family="sans-serif" font-size="11" fill="#94A3B8">Creation &amp; Scheduling Time</text>
+
+    <!-- Bar comparison -->
+    <text x="25" y="140" font-family="sans-serif" font-size="11" fill="#EF4444">Manual: 48 Hours</text>
+    <rect x="25" y="150" width="220" height="24" rx="4" fill="#EF4444" fill-opacity="0.3" />
+
+    <text x="25" y="220" font-family="sans-serif" font-size="11" fill="#10B981">Multi-Agent: 1.5 Hours</text>
+    <rect x="25" y="230" width="30" height="24" rx="4" fill="#10B981" />
+
+    <text x="25" y="320" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="800" fill="#10B981">-70%</text>
+    <text x="25" y="345" font-family="sans-serif" font-size="11" fill="#94A3B8">Content Production Speedup</text>
+  </g>
+
+  <!-- Metric Card 2: Touchpoints -->
+  <g transform="translate(365, 140)">
+    <rect width="270" height="380" rx="12" fill="#131B2E" stroke="rgba(255,255,255,0.08)" />
+    <text x="25" y="45" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" fill="#F8FAFC">Human Touchpoints</text>
+    <text x="25" y="70" font-family="sans-serif" font-size="11" fill="#94A3B8">Required Review Cycles</text>
+
+    <text x="25" y="140" font-family="sans-serif" font-size="11" fill="#EF4444">Legacy: 10 Steps</text>
+    <rect x="25" y="150" width="220" height="24" rx="4" fill="#EF4444" fill-opacity="0.3" />
+
+    <text x="25" y="220" font-family="sans-serif" font-size="11" fill="#06B6D4">Agentic: 2 Steps (Approval)</text>
+    <rect x="25" y="230" width="45" height="24" rx="4" fill="#06B6D4" />
+
+    <text x="25" y="320" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="800" fill="#22D3EE">-80%</text>
+    <text x="25" y="345" font-family="sans-serif" font-size="11" fill="#94A3B8">Human Friction Reduced</text>
+  </g>
+
+  <!-- Metric Card 3: Compute Cost -->
+  <g transform="translate(670, 140)">
+    <rect width="270" height="380" rx="12" fill="#131B2E" stroke="rgba(255,255,255,0.08)" />
+    <text x="25" y="45" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" fill="#F8FAFC">Inference Cost</text>
+    <text x="25" y="70" font-family="sans-serif" font-size="11" fill="#94A3B8">Monthly GPU Expenditure</text>
+
+    <text x="25" y="140" font-family="sans-serif" font-size="11" fill="#EF4444">Cloud-Only: $4,200/mo</text>
+    <rect x="25" y="150" width="220" height="24" rx="4" fill="#EF4444" fill-opacity="0.3" />
+
+    <text x="25" y="220" font-family="sans-serif" font-size="11" fill="#8B5CF6">Hybrid Burst: $1,600/mo</text>
+    <rect x="25" y="230" width="85" height="24" rx="4" fill="#8B5CF6" />
+
+    <text x="25" y="320" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="800" fill="#A78BFA">-62%</text>
+    <text x="25" y="345" font-family="sans-serif" font-size="11" fill="#94A3B8">Cost Savings via On-Prem Core</text>
+  </g>
+</svg>

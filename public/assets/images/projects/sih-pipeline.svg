@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sihGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080D18" />
+      <stop offset="100%" stop-color="#10182E" />
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="600" fill="url(#sihGrad)" />
+
+  <text x="60" y="60" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">
+    AI MULTILINGUAL VIDEO DUBBING PIPELINE — SIH 2023 WINNER
+  </text>
+  <text x="60" y="85" font-family="'JetBrains Mono', monospace" font-size="12" fill="#FBBF24">
+    Smart India Hackathon 2023 1st Place • Whisper • IndicTrans2 • VITS TTS • Audio Time-Warping
+  </text>
+
+  <!-- Flow connecting line -->
+  <path d="M 190 260 L 250 260" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4" />
+  <path d="M 400 260 L 460 260" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4" />
+  <path d="M 610 260 L 670 260" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4" />
+  <path d="M 820 260 L 880 260" stroke="#10B981" stroke-width="2" />
+
+  <!-- Step 1: Input & Audio Demux -->
+  <g transform="translate(60, 180)">
+    <rect width="130" height="170" rx="10" fill="#131B2D" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+    <rect width="130" height="4" rx="2" fill="#F59E0B" />
+    <text x="15" y="30" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">1. Demuxing</text>
+    <text x="15" y="55" font-family="sans-serif" font-size="9" fill="#94A3B8">• Source Lecture</text>
+    <text x="15" y="75" font-family="sans-serif" font-size="9" fill="#94A3B8">• Audio Stripping</text>
+    <text x="15" y="95" font-family="sans-serif" font-size="9" fill="#94A3B8">• Noise Reduction</text>
+    <rect x="15" y="125" width="100" height="22" rx="4" fill="#F59E0B" fill-opacity="0.15" />
+    <text x="25" y="140" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FBBF24">FFmpeg Demux</text>
+  </g>
+
+  <!-- Step 2: Speech Recognition -->
+  <g transform="translate(250, 180)">
+    <rect width="150" height="170" rx="10" fill="#131B2D" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+    <rect width="150" height="4" rx="2" fill="#38BDF8" />
+    <text x="15" y="30" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">2. Transcription</text>
+    <text x="15" y="55" font-family="sans-serif" font-size="9" fill="#94A3B8">• Word Timestamps</text>
+    <text x="15" y="75" font-family="sans-serif" font-size="9" fill="#94A3B8">• Speaker Diarization</text>
+    <text x="15" y="95" font-family="sans-serif" font-size="9" fill="#94A3B8">• Technical Terms</text>
+    <rect x="15" y="125" width="120" height="22" rx="4" fill="#38BDF8" fill-opacity="0.15" />
+    <text x="25" y="140" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38BDF8">Whisper Large-v3</text>
+  </g>
+
+  <!-- Step 3: Neural Translation -->
+  <g transform="translate(460, 180)">
+    <rect width="150" height="170" rx="10" fill="#131B2D" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+    <rect width="150" height="4" rx="2" fill="#A78BFA" />
+    <text x="15" y="30" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">3. Translation</text>
+    <text x="15" y="55" font-family="sans-serif" font-size="9" fill="#94A3B8">• 6+ Regional Dialects</text>
+    <text x="15" y="75" font-family="sans-serif" font-size="9" fill="#94A3B8">• Idiom Preservation</text>
+    <text x="15" y="95" font-family="sans-serif" font-size="9" fill="#94A3B8">• STEM Vocab Tuning</text>
+    <rect x="15" y="125" width="120" height="22" rx="4" fill="#A78BFA" fill-opacity="0.15" />
+    <text x="25" y="140" font-family="'JetBrains Mono', monospace" font-size="9" fill="#C084FC">IndicTrans2</text>
+  </g>
+
+  <!-- Step 4: TTS & Prosody -->
+  <g transform="translate(670, 180)">
+    <rect width="150" height="170" rx="10" fill="#131B2D" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+    <rect width="150" height="4" rx="2" fill="#10B981" />
+    <text x="15" y="30" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">4. Synthesis</text>
+    <text x="15" y="55" font-family="sans-serif" font-size="9" fill="#94A3B8">• Neural Voice Gen</text>
+    <text x="15" y="75" font-family="sans-serif" font-size="9" fill="#94A3B8">• Pitch &amp; Gender Match</text>
+    <text x="15" y="95" font-family="sans-serif" font-size="9" fill="#94A3B8">• Time-Warp Align</text>
+    <rect x="15" y="125" width="120" height="22" rx="4" fill="#10B981" fill-opacity="0.15" />
+    <text x="25" y="140" font-family="'JetBrains Mono', monospace" font-size="9" fill="#34D399">VITS + SciPy</text>
+  </g>
+
+  <!-- Final Output Video -->
+  <g transform="translate(880, 180)">
+    <rect width="80" height="170" rx="10" fill="#1A2744" stroke="#10B981" stroke-width="2" />
+    <text x="15" y="80" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Dubbed</text>
+    <text x="15" y="100" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#34D399">Video</text>
+    <text x="15" y="120" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">.MP4</text>
+  </g>
+
+  <!-- Award Callout Banner -->
+  <rect x="60" y="460" width="880" height="75" rx="12" fill="#151A2C" stroke="#F59E0B" stroke-width="1.5" />
+  <text x="90" y="500" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700" fill="#FBBF24">
+    🏆 1st Place National Winner — Smart India Hackathon (SIH 2023)
+  </text>
+  <text x="90" y="520" font-family="sans-serif" font-size="11" fill="#94A3B8">
+    Recognized by Ministry of Education &amp; AICTE for accessible multilingual technical education.
+  </text>
+</svg>
