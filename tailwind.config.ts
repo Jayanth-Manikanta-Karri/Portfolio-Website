@@ -46,6 +46,7 @@ const config: Config = {
         "pulse-glow": "pulseGlow 4s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
         "gradient-shift": "gradientShift 8s ease infinite",
+        "shimmer": "shimmer 1.5s ease-in-out infinite",
       },
       keyframes: {
         pulseGlow: {
@@ -60,6 +61,10 @@ const config: Config = {
           "0%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
+        },
+        shimmer: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(200%)" },
         },
       },
       boxShadow: {

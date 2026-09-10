@@ -11,7 +11,7 @@ export default function NotFound() {
         </div>
 
         <div className="space-y-2">
-          <div className="text-xs font-mono text-cyan-400 tracking-wider uppercase">
+          <div className="text-xs font-mono text-blue-400 tracking-wider uppercase">
             Error 404 // Node Not Found
           </div>
           <h1 className="text-3xl font-heading font-extrabold text-white tracking-tight">
@@ -25,7 +25,7 @@ export default function NotFound() {
         <div className="pt-2">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-xs font-mono transition shadow-glow"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs font-mono transition shadow-lg shadow-blue-500/20"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Return to Orbit</span>
